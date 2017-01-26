@@ -1,4 +1,4 @@
-# phprintrformatter
+# PHPrintrFormatter
 Simply reads an input file with a PHP array or object printed out with print_r($var, true) and formats it to be easier to read.
 
 You have two flags available:
