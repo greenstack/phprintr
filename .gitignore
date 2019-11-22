@@ -8,5 +8,6 @@
 *.out
 *.vcxproj*
 
-# Ignore Visual Studio's debug directory
+# Ignore Visual Studio's debug directory and other IDEs
 Debug/*
+.vscode
