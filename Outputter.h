@@ -13,10 +13,10 @@ protected:
 	bool inString;
 	int columns;
 public:
-	Outputter();
+	Outputter() : inString(false), columns(0) {}
 	~Outputter();
-	std::string fabricateWhitespace(int tabCount);
+	const std::string fabricateWhitespace(int tabCount) const;
 	void processCharacter(const char&, const Flags&, std::ostream&);
-	void setConsoleTextColor(bool, std::ostream&);
+	void setConsoleTextColor(bool, std::ostream&) const;
 };
 

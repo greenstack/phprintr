@@ -1,20 +1,11 @@
 #include "Outputter.h"
 
-
-
-Outputter::Outputter()
-{
-	inString = false;
-	columns = 0;
-}
-
-
 Outputter::~Outputter()
 {
 }
 
-std::string Outputter::fabricateWhitespace(int tabCount) {
-	std::string tabsBase = "  ";
+const std::string Outputter::fabricateWhitespace(int tabCount) const {
+	const std::string tabsBase = "  ";
 	std::string whitespace = "";
 	for (int i = 0; i < tabCount; i++) {
 		whitespace += tabsBase;
@@ -51,7 +42,7 @@ void Outputter::processCharacter(const char& current, const Flags& flags, std::o
 	stream << current;
 }
 
-void Outputter::setConsoleTextColor(bool doColor, std::ostream& ss)
+void Outputter::setConsoleTextColor(bool doColor, std::ostream& ss) const
 {
 	if (!doColor)
 	{
@@ -72,7 +63,7 @@ void Outputter::setConsoleTextColor(bool doColor, std::ostream& ss)
 		"\033[35;1m", //magenta
 	};
 	ss << colors[colorIndex];
-#elif defined(_WINDOWS_)
+#elif _WINDOWS_
 	// colors won't rotate. why? ...oh yeah.
 	HANDLE hstdin = GetStdHandle(STD_INPUT_HANDLE);
 	HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
