@@ -14,8 +14,8 @@ int main(int argc, char** argv)
 	GetConsoleScreenBufferInfo(hstdout, &csbi);
 #endif
 
-	const int MIN_ARG_COUNT = 2;
-	const int COLOR_ARG_COUNT = 3;
+	constexpr int MIN_ARG_COUNT = 2;
+	constexpr int COLOR_ARG_COUNT = 3;
 	Flags flags;
 	Outputter output;
 	// Program setup
